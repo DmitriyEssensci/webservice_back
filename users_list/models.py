@@ -1,6 +1,5 @@
 from sqlalchemy import Column, Integer, String
-from database import Base
-from pydantic import BaseModel
+from users_list.database import Base
 
 class User(Base):
     __tablename__ = "users"
@@ -10,7 +9,3 @@ class User(Base):
     city = Column(String, nullable=False)
     postal_code = Column(String, nullable=False)
 
-class UserCreate(BaseModel):
-    full_name: str
-    city: str
-    postal_code: str
