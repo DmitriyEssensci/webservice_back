@@ -58,7 +58,6 @@ def edit_ads_object(
     if ads_object is None:
         raise HTTPException(status_code=404, detail="Объект не найден")
 
-    # Редактируем только разрешённые поля
     if updated_object.object_name is not None:
         ads_object.object_name = updated_object.object_name
     if updated_object.short_descr is not None:
@@ -66,7 +65,6 @@ def edit_ads_object(
     if updated_object.full_descr is not None:
         ads_object.full_descr = updated_object.full_descr
 
-    # Поле update_data обновится автоматически благодаря SQLAlchemy
     db.commit()
     db.refresh(ads_object)
 

@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from passlib.context import CryptContext
 import jwt
-from datetime import datetime, timedelta  # Исправили импорт
-from .models import RegUser  # Модель регистрации
-from .schemas import AuthUserCreate, Token  # Схемы для создания пользователя
+from datetime import datetime, timedelta
+from .models import RegUser
+from .schemas import AuthUserCreate, Token
 from .database import SessionLocal, engine, Base
 
 # Инициализация криптографического контекста для хеширования паролей
