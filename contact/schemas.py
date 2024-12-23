@@ -1,5 +1,4 @@
 from pydantic import BaseModel
-from .database import Base
 from datetime import datetime
 
 class RequestCreate(BaseModel):

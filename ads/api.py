@@ -1,8 +1,7 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from .database import SessionLocal, Base
+from .database import SessionLocal
 from .models import AdsModel
-from .schemas import AdsObject
 
 router = APIRouter(prefix="/ads/api", tags=["ads"])
 
