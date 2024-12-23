@@ -1,5 +1,5 @@
-.venv
-__pycache__
+.venv/
+__pycache__/
 auth/login/__pycache__
 auth/registration/__pycache__
 users_list/__pycache__
