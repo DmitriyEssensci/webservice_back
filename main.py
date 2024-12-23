@@ -13,6 +13,9 @@ from auth.login.api import router as auth_login_api
 from ads.routes import router as ads_router
 from ads.api import router as ads_router_api
 
+from contact.routes import router as contact_router
+from contact.api import router as contact_router_api
+
 app = FastAPI()
 
 # Настройка CORS
@@ -25,10 +28,16 @@ app.add_middleware(
 
 # Подключение маршрутов пользователей
 app.include_router(default)
+
 app.include_router(users_router)
 app.include_router(users_router_api)
+
 app.include_router(auth_reg)
 app.include_router(auth_login)
 app.include_router(auth_login_api)
+
 app.include_router(ads_router)
 app.include_router(ads_router_api)
+
+app.include_router(contact_router)
+app.include_router(contact_router_api)

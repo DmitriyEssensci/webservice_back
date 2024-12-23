@@ -14,6 +14,6 @@ def get_db():
         db.close()
 
 @router.get("/")
-def get_users(db: Session = Depends(get_db)):
-    users = db.query(AdsModel).all()
-    return {"objects": users}
+def get_ads_objects(db: Session = Depends(get_db)):
+    ads_objects = db.query(AdsModel).all()
+    return {"objects": ads_objects}
